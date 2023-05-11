@@ -1,0 +1,138 @@
+.profile-container {
+    margin-top: 4rem;
+    padding: 0 1rem;
+    animation-duration: 3s;
+    animation-name: fadeIn;
+}
+@keyframes fadeIn {
+    from {
+        margin-right: 6rem;
+    }
+    to {
+        margin-right: 0;
+    }
+}
+.profile-container .description{
+    color: grey;
+    font-size: 15px;
+}
+
+.profile-container .profile{
+    margin-top: 6rem;
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    padding: 1rem 2rem;
+    align-items: center;
+    box-shadow: var(--box-shadow);
+}
+@media (max-width: 912px) {
+    .profile-container .profile{
+        grid-template-columns: 1fr;
+        margin-top: 9rem;
+    }
+    .profile .edit{
+        display: none;
+    }
+    .profile-container .profile .account-details .account-detail{
+        max-height: 15vh !important;
+    }
+} 
+@media (max-width: 480px) {
+    .profile-container {
+        overflow-y: hidden;
+        height: auto !important;
+        padding-bottom: 1rem;
+    }
+    .profile-container .profile{
+        margin-top: 2rem;
+    }
+    .profile-container .profile .account-details{
+        grid-template-columns: 1fr !important;
+    }
+    
+} 
+.profile-container .profile .account-details{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+    gap: 1rem;
+}
+.profile-container .profile .account-details .account-detail{
+    background: var(--light-grey);
+    padding: 1rem;
+    border-radius: 12px;
+    align-items: center;
+    max-height: 20vh;
+}
+.profile-container .profile .account-details .account-detail .detail-n-icon{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.account-detail .detail-n-icon .name{
+    font-weight: bold;
+}
+.account-detail .detail-n-icon i{
+    color: #f37548;
+    padding: 3px;
+    cursor: pointer;
+}
+.account-detail .data-detail{
+    font-size: 14px;
+    color: grey;
+    border: none;
+    background: none;
+}
+.account-detail .data-detail.focus{
+    border: 1px solid rgb(166, 162, 162);
+    padding: 3px 6px;
+    margin-top: .2rem;
+    border-radius: 5px;
+}
+.account-detail .data-detail:focus{
+    outline: none;
+}
+
+.edit-btn {
+    color: #4a4af5;
+    background: none;
+    font-size: 21px;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    gap: .5rem;
+    right: 4rem;
+    margin-top: 2rem;
+    align-items: center;
+    transition: 2s linear;
+}
+.edit-btn small{
+    background: var(--light-grey);
+    font-size: 12px;
+    padding: .3rem .5rem;
+    border-radius: 5px;
+    display: none;
+}
+.edit-btn:hover.edit-btn small{
+    display: block;
+}
+
+.profile .edit img{
+    width: 460px;
+    /* object-fit: cover; */
+    /* display: none; */
+}
+
+.updateBtn{
+    background: none;
+    color: grey;
+    border: 1px solid;
+    padding: .1rem .5rem;
+    border-radius: 12px;
+    margin: .3rem 0;
+    cursor: pointer;
+}
+.updateBtn:hover{
+    color: #f37548;
+}

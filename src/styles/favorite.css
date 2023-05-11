@@ -1,0 +1,100 @@
+.container{
+    padding: 1rem;
+    margin: 1rem;
+    margin-top: 6rem;
+    height: 82vh;
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+    /* background: var(--light-grey); */
+}
+.container h2{
+    margin-top: 1rem;
+    font-style: italic;
+    color: var(--blue);
+}
+.container .favorite-container{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+}
+.container .favorite-container .favorites{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 1.5rem;
+    gap: 2rem;
+    height: 50vh;
+}
+.container .favorite-container .favorites .favorite{
+    background: var(--light-grey);
+    border-radius: 12px;
+    height: 8vh;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    border-left: 2px solid #7da6fa;
+    border-right: 2px solid #7da6fa;
+    position: relative;
+    cursor: pointer;
+    transition: 3s ease-in-out;
+    /* box-shadow: var(--box-shadow); */
+}
+.favorite .score{
+    display: inline-flex;
+    justify-content: center;
+    background: #fff;
+    border: 1.5px solid #7da6fa;
+    font-size: 14px;
+    padding: .3rem .3rem;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.delete{
+    position: absolute;
+    right: -6px;
+    top: -4px;
+    padding: .2rem .3rem;
+    display: inline-flex;
+    justify-content: center;
+    background: #fff;
+    border-radius: 50%;
+    font-size: 9px;
+    /* color: var(--orange); */
+    color: #6d9bf8;
+    border: 1px solid ;
+    transform: scale(1.2);
+    cursor: pointer;
+    display: none;
+    transition: 3s ease-in-out;
+}
+.delete:hover{
+    color: #ee8761;
+}
+
+.img-area img{
+    /* display: none; */
+    margin-top: -1rem;
+    width: 410px;
+}
+.favorite:hover .delete{
+    display: block;
+}
+@media (max-width: 912px) {
+    .container{
+        box-shadow: none;
+    }
+    .favorite-container{
+        grid-template-columns: 1fr !important;
+        height: auto;
+        
+    }
+    .favorite-container .favorites{
+        grid-template-columns: 1fr !important;
+        height: auto !important;
+    }
+    
+    .favorite-container .img-area{
+        display: none;
+    }
+}

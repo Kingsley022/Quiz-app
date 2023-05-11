@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Bruno+Ace+SC&family=Darumadrop+One&family=Exo+2:wght@200&family=Francois+One&family=Noto+Sans+JP:wght@500&family=Quicksand:wght@500&family=Signika+Negative:wght@300&family=Varela+Round&family=Ysabeau:wght@200&display=swap');
+
+.take-quiz-container{
+  background: linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 100%), url(../utils/images/quizbg.jpg);
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: grid;
+  position: relative;
+  padding: 2rem 4rem;
+}
+.take-quiz-container .quizz-questions{
+  display: flex;
+  color: aliceblue;
+}
+
+
+.take-quiz-container .logo-n-time{
+  display: flex;
+  justify-content: space-between;
+  height: auto;
+  align-items: center;
+  margin-bottom: .5rem;
+}
+.take-quiz-container .logo-n-time img{
+  width: 178px;
+  height: 50%;
+}
+.take-quiz-container .logo-n-time .interval{
+  font-size: 28px;
+  background: rgba(28, 28, 28, 0.3);
+  padding: 1rem;
+  color: black;
+  border-radius: 100%;
+}
+
+.quizz-questions .questionn-container{
+  display: none;
+}
+.quizz-questions .questionn-container.active-question{
+  display: block;
+  width: 100%;
+  animation: quetionFadeUp;
+  animation-duration: 3s;
+}
+.quizz-questions .questionn-container .questionn{
+  font-size: 28px;
+  color: #dbd9d9;
+}
+@keyframes quetionFadeUp{
+  from {
+    margin-bottom: -10%;
+  }
+  to {
+    margin-bottom: 0;
+  }
+}
+.questionn-container .optionss{
+  margin-top: 2.5rem;
+}
+.questionn-container .optionss .optionn{
+  display: flex;
+  gap: .3rem;
+  align-items: center;
+  padding: 1rem 0;
+}
+.questionn-container .optionss .optionn label{
+  cursor: pointer;
+  color: #a7a6a6;
+}
+
+.questionn-container .optionss .optionn>input[type="radio"] {
+  /* Hide the default radio button */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: inline-block;
+  position: relative;
+  background: none;
+  color: #333;
+  padding: 5px;
+  border-radius: 50%;
+  border: 2px solid #a7a6a6;
+  cursor: pointer;
+  margin-right: 5px;
+}
+  
+.questionn-container .optionss .optionn>input[type="radio"]:checked::before {
+  /* Style the checked radio button */
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 7px;
+  height: 7px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+/* ********* Button area begins *************** */
+.take-quiz-container .button-area{
+  position: relative;
+  /* bottom: 4rem;
+  right: 4rem; */
+}
+.take-quiz-container .button-area .buttons{
+  right: 2rem;
+  display: flex;
+  align-items: right;
+  align-items: center;
+  gap: .5rem;
+  position: fixed;
+  right: 4rem;
+  bottom: 4rem;
+}
+.take-quiz-container .button-area .buttons p{
+  font-weight: bold;
+  color: #fff;
+}
+.take-quiz-container .button-area .buttons button{
+  color: #fff;
+  border: 2px solid #e44c2d;
+  padding: .4rem 3rem;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #eab1a5;
+  background: none;
+}
+.take-quiz-container .button-area .submit{
+  position: fixed;
+  border: 2px solid;
+  color: #fff;
+  background: none;
+  padding: .4rem 3rem;
+  border-radius: 5px;
+  cursor: pointer;
+  left: 4rem;
+  bottom: 4rem;
+}
+.take-quiz-container .button-area .submit:hover{
+    color: #e9684f;
+}
+
+.questionpreview {
+    background: linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.9) 100%), url(../utils/images/quizbg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 20px;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .questionpreview h1 {
+    color: #e4dfdf;
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  
+  .questionpreview p {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .questionpreview button {
+    background-color: #378539;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .questionpreview button:hover {
+    background-color: #45a049;
+  }
+  .questionpreview .previewBtns{
+    display: flex;
+    gap: 2rem;
+  }
+  .questionpreview .previewBtns .tBtn{
+    background-color: #919391;
+    color: rgb(182, 180, 180);
+  }
+
+/* Quiz Summary Begins */
+.summary-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  height: 100vh;
+  background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.8) 100%), url(../utils/images/quizbg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+
+.summary-image{
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+  border: 6px solid rgb(166, 165, 165);
+  border-radius: 100%;
+  position: relative;
+}
+.summary-image img{
+  width: 90px;
+  right: -.8rem;
+  position: absolute;
+  background: transparent;
+}
+
+.summary-content {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.summary-content h2 {
+  color: #fff;
+  line-height: 4rem;
+  font-size: 38px;
+  font-weight: bold;
+  font-family: 'Darumadrop One', cursive;
+}
+.summary-content h2 span{
+  color: #41c154;
+  font-family: 'Darumadrop One', cursive;
+}
+
+.summary-content p {
+  color: rgb(158, 157, 157);
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.summary-content .points{
+  color: #dae6da;
+}
+.summary-content button{
+  color: #41c154;
+  border: none;
+  background: none;
+  border: 2px solid;
+  padding: .3rem 2rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.take-quiz-container{
+  overflow-y: hidden;
+}
+@media (max-width: 768px) {
+  .take-quiz-container .button-area .buttons button{
+    padding: .4rem 2rem;
+  }
+  
+  .take-quiz-container .button-area .submit{
+    padding: .4rem 2rem;
+    left: 1rem;
+  }
+
+  .take-quiz-container .logo-n-time img{
+    width: px;
+    height: 35%;
+  }
+  .take-quiz-container .logo-n-time .interval{
+    font-size: 21px;
+  }
+}
+@media (max-width: 420px) {
+  .take-quiz-container .button-area .buttons button{
+    padding: .4rem .5rem;
+  }
+  .take-quiz-container .button-area .submit{
+    padding: .4rem .5rem;
+    left: 1rem;
+  }
+  .quizz-questions .questionn-container .questionn{
+    font-size: 22px;
+  }
+  .take-quiz-container .logo-n-time{
+    gap: 1rem;
+  }
+  .take-quiz-container .logo-n-time img{
+    height: 25%;
+  }
+  .take-quiz-container .logo-n-time .interval{
+    font-size: 21px;
+    background: none;
+    padding: 0;
+    margin-top: .8rem;
+  }
+}

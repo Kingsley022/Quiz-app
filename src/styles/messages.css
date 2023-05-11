@@ -1,0 +1,184 @@
+.messagesContainer{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 1rem;
+    margin-top: 6rem;
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+    height: 80vh;
+    align-items: center;
+}
+
+.messages-area{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 1rem;
+    overflow-y: scroll;
+}
+
+.messages-area::-webkit-scrollbar{
+    display: none;
+}
+
+.messages-area .message{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    font-size: 12px;
+    letter-spacing: .3px;
+    line-height: 1.5;
+    padding: 1rem;
+    position: relative;
+    margin-left: 2rem;
+    margin-top: 0;
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+}
+.messages-area .message .fa{
+    position: absolute;
+    color: #2691e8;
+    left: -60px;
+    z-index: 99;
+    top: 0;
+    padding: .5rem;
+    border-radius: 50%;
+    border: 1px solid;
+}
+
+.messagesContainer .img-area{
+    /* margin-top: 1fr; */
+    position: absolute;
+    right: 0;
+    /* margin-top: 1rem; */
+}
+.messagesContainer .img-area img{
+    width: 455px;
+}
+
+/* ______________  Admin Message begins _______________________ */
+
+.adminMessageConatiner{
+    margin: 0 1rem;
+    margin-top: 6.5rem;
+}
+.adminMessages{
+    margin-top: 1rem;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    overflow-y: scroll;
+    max-height  : 75vh;
+}
+.adminMessages::-webkit-scrollbar{
+    display: none;
+}
+.adminMessages .adminMessage{
+    background: var(--light-grey);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem .5rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.adminMessage .keyword-n-user h2{
+    font-size: 19px;
+}
+.adminMessage .keyword-n-user p{
+    color: grey;
+    font-size: 14px;
+}
+.adminMessage .fa-envelope{
+    color: rgb(52, 130, 220);
+    cursor: pointer;
+}
+@media (max-width: 912px) {
+    .adminMessages{
+        grid-template-columns: 1fr;
+    }
+    .adminMessageConatiner{
+        margin-top: 8rem;
+    }
+}
+@media (max-width: 480px) {
+    
+    .adminMessageConatiner{
+        margin-top: 6rem;
+    }
+}
+
+/* _______________message Details _____________ */
+.message-details{
+    overflow-y: scroll;
+    max-height: 75vh;
+    background: var(--light-grey);
+    margin-top: 1rem;
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    border-radius: 12px;
+}
+.message-details::-webkit-scrollbar{
+    display: none;
+}
+.message-details .details-header{
+    display: flex;
+    justify-content: space-between;
+    background: var(--light-grey);
+    position: sticky;
+    width: 100%;
+    padding: .5rem 1rem;
+    top: 0;
+    z-index: 2;
+}
+.message-details .details-header .message-details-btn{
+    display: flex;
+    gap: 2rem;
+}
+.message-details .details-header .message-details-btn button{
+    display: inline-block;
+    height: 1.5rem;
+    padding: 0 .5rem;
+    cursor: pointer;
+    background: none;
+    border: 1px solid;
+    border-radius: 5px;
+    color: var(--orange)
+}
+.message-details .details-questions{
+    margin-top: 1.5rem;
+}
+.message-details .details-question{
+    padding: .5rem 1rem;
+}
+
+.message-details span{
+    color: grey;
+}
+.message-details .details-time{
+    padding: .5rem 1rem;
+}
+@media (max-width: 912px) {
+    .messagesContainer{
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 280px) {
+    .logo{
+        width: 45px;
+    }
+    .adminMessageConatiner{
+        margin-top: 5rem;   
+    }
+    .message-details .details-header{
+        font-size: 9px;
+    }
+    .message-details .details-header .message-details-btn{
+        gap: .5rem;
+    }
+    .message-details .details-header .message-details-btn button{
+        padding: 0 .3rem;
+    }
+    
+}

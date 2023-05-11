@@ -1,0 +1,278 @@
+
+/* Login Container */
+.login-container{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    margin: auto;
+    /* animation: animateSignIn 3s ease-in-out; */
+    background: var(--light-grey);
+}
+
+@keyframes animateSignIn {
+    from{
+        transform: scale(1.1);
+    }
+    to{
+        margin: auto;
+        transform: scale(1);
+    }
+}
+.login-container .img-area{
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.3) 100%),url(../utils/images/signInBg2.jpg);
+    min-height: 70vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0 100% 100% 0;
+    width: 80%;
+}
+.login-container .form-area{
+    padding: 2rem 6rem;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation-name: formfade;
+    animation-duration: 3s;
+}
+.login-container .form-area .logo{
+    width: 98px;
+}
+.login-container .form-area .greeting{
+    color: grey;
+    list-style: 12px;
+    padding: 1.3rem 0;
+    font-size: 14px;
+}
+.login-container .form-area .greeting span{
+    color: #000;
+    font-size: 21px;
+    font-weight: bold;
+}
+.login-container .form-area form{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.login-container .form-area form .input-field{
+    display: flex;
+    background: #fff;
+    border-bottom: 2px solid var(--dark-blue);
+    border-radius: 12px;
+    padding: .8rem 1rem;
+    width: 100%;
+    margin: .5rem 0;
+    position: relative;
+}
+.login-container .form-area form .input-field i{
+    color: grey;
+}
+.login-container .form-area form input{
+    display: inline-block;
+    /* padding: .8rem 0; */
+    width: 100%;
+    border: none;
+    outline: none;
+}
+.login-container .form-area form .submitBtn{
+    width: 100%;
+    color: var(--blue);
+    background: none;
+    border-radius: 12px;
+    padding:.5rem 0;
+    margin-top: 1rem;
+    border: 2px solid;
+    cursor: pointer;
+}
+
+
+.btn-container-forgot{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: .5rem 0;
+    color: grey;
+}
+.btn-container-forgot span{
+    color: var(--blue);
+    cursor: pointer;
+}
+.btn-container-forgot .forgot-password{
+    cursor: pointer;
+    color: var(--blue);
+}
+@media (max-width: 912px){
+    .login-container .img-area,
+    .signUp-container .img-area{
+        display: none;
+    }
+    .signUp-container{
+        align-items: center;
+    }
+}
+@media (max-width: 768px){
+    .login-container .form-area{
+        padding: 2rem;
+    }
+}
+
+/* ************* Sign Up begins ********* */
+.signUp-container{
+    display: flex;
+    width: 100%;
+    /* height: 100vh; */
+    margin: auto;
+    /* animation: animateSignIn 3s ease-in-out; */
+    background: var(--light-grey);
+}
+
+@keyframes animateSignIn {
+    from{
+        transform: scale(1.1);
+    }
+    to{
+        margin: auto;
+        transform: scale(1);
+    }
+}
+.signUp-container .img-area{
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.3) 100%),url(../utils/images/signInBg2.jpg);
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0 100% 100% 0;
+    width: 80%;
+}
+
+.signUp-container .form-area{
+    padding: 2rem 6rem;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: formfade;
+    animation-duration: 3s;
+}
+.signUp-container .form-area .logo{
+    width: 98px;
+}
+.signUp-container .form-area .greeting{
+    color: grey;
+    list-style: 12px;
+    padding: 1.3rem 0;
+    font-size: 14px;
+}
+.signUp-container .form-area .greeting span{
+    color: #000;
+    font-size: 21px;
+    font-weight: bold;
+}
+.signUp-container .form-area form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+.signUp-container .form-area form .name-field{
+    display: flex;
+    width: 100%;
+    gap: 2rem;
+}
+.signUp-container .form-area form .name-field .input-n-error{
+    width: 100%;
+}
+.signUp-container .form-area form .name-field .error{
+    float: left;
+}
+.signUp-container .form-area form .input-field{
+    display: flex;
+    background: #fff;
+    border-bottom: 2px solid var(--dark-blue);
+    border-radius: 12px;
+    padding: .5rem 1rem;
+    width: 100% ;
+    justify-content: center;
+    margin: .5rem 0;
+    position: relative;
+}
+.signUp-container .form-area form .input-field i{
+    color: grey;
+}
+.signUp-container .form-area form input{
+    display: inline-block;
+    border: none;
+    outline: none;
+    width: 100%;
+}
+.signUp-container .form-area form .submitBtn{
+    width: 100%;
+    color: var(--blue);
+    background: none;
+    border-radius: 12px;
+    padding:.5rem 0;
+    margin-top: 1rem;
+    border: 2px solid;
+    cursor: pointer;
+}
+.switch-form{
+    color: grey;
+    font-size: 14px;
+}
+.switch-form span{
+    color: var(--blue);
+    cursor: pointer;
+}
+
+.btn-container-forgot{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: .5rem 0;
+    color: grey;
+}
+.btn-container-forgot span{
+    color: var(--blue);
+    cursor: pointer;
+}
+.btn-container-forgot .forgot-password{
+    cursor: pointer;
+    color: var(--blue);
+}
+
+.signUp-container .form-area form .error{
+    text-align: left;
+    width: 100%;
+    margin-left: .3rem;
+}
+.backerr{
+    float: center;
+}
+
+.fa-eye, .fa-eye-slash{
+    cursor: pointer;
+}
+@media (max-width: 768px){
+    .signUp-container .form-area{
+        padding: 2rem;
+        align-items: center;
+        height: 100vh;
+    }
+}
+@keyframes formfade{
+    from{
+        opacity: .3;
+        /* margin-left: 2rem;; */
+    }to{
+        opacity: 1;
+        /* margin-left: 0; */
+    }
+}

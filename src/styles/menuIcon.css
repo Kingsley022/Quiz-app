@@ -1,0 +1,15 @@
+.menu-icon-container {
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .menu-icon {
+    width: 20px;
+    height: 2.8px;
+    background-color: #3f3f3f;
+    margin: 3px 0;
+    border-radius: 2px;
+  }
+  .menu-icon:last-child{
+    width: 12px;
+  }

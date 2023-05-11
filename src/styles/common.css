@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Bruno+Ace+SC&family=Exo+2:wght@200&family=Francois+One&family=Noto+Sans+JP:wght@500&family=Quicksand:wght@500&family=Signika+Negative:wght@300&family=Varela+Round&family=Ysabeau:wght@200&display=swap');
+
+
+.colorful-header{
+    font-size: 14px;
+    background: linear-gradient(to right, #EB3017 , #004aad,#142141);
+    color: #ecebeb !important;
+    padding: .2rem .8rem;
+    border-radius: 8px;
+    border-end-start-radius: 21px;
+    border-end-end-radius: 21px;
+    display: inline-block;
+}
+
+.sort{
+    display: flex;
+    font-size: 14px;
+    gap: .1rem;
+    cursor: pointer;
+}
+.sort .active{
+    color: var(--blue);
+}
+
+.google-btn{
+    display: flex;
+    border-radius: 12px;
+    margin:.5rem 0;
+    padding: .5rem 2rem;
+    background: none;
+    color: #000;
+    /* font-weight: bold; */
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    text-align: center;
+    border: 1.5px solid var(--dark-blue);
+    color: grey;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+} 
+.google-btn img{
+    width: 17px;
+}
+
+.G-btn{
+    background: none;
+    padding: .3rem 2rem;
+    color: #FA4D56;
+    border: 2px solid;
+    border-radius: 5px;
+    font-size: 17px;
+    /* font-weight: bold; */
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+.G-btn:hover{
+    color: #fc969b;
+}
+.signIn{
+    color: #fff;
+    /* color: #0F62FE; */
+}
+.signIn:hover{
+    color: #ebdfdf;
+    /* color: #0F62FE; */
+}
+.signInC{
+    color: #FA4D56;
+}
+.signInC:hover{
+    color: #fc969b;
+}
+
+/* ******** Pop Up Message Begins  */
+.popup-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .popup-background .greeting {
+    text-align: center;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+    position: relative;
+  }
+  
+  .popup-background .thanks-img {
+    position: absolute;
+    top: -110px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 200px;
+  }
+  
+  .popup-background .heading {
+    font-family: 'Varela Round', sans-serif;
+    margin-top: 60px;
+    color: #35a1ee;
+    text-transform: uppercase;
+  }
+  
+  .popup-background  .message {
+    font-size: 24px;
+    /* margin-top: 30px; */
+    color: #666;
+    line-height: 1.4;
+  }
+  
+.popup-background .ok-button {
+    display: block;
+    background: none;
+    color: #35a1ee;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    position: absolute;
+    right: 2rem;
+    bottom: .3rem;
+}
+
+/* _________EmptyField Begins______________ */
+.emptyFiled{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+.emptyFiled img{
+    width: 230px;
+}
+.emptyFiled p{
+    color: #d1cfcf;
+    margin-top: .5rem;
+}

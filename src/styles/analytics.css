@@ -1,0 +1,18 @@
+.analytics{
+  margin-top: 6rem;
+  height: 80vh;
+  overflow-y: scroll;
+  padding: 0 1rem;
+}
+.chart-container {
+  width: auto;
+  height: 420px;
+  padding-bottom: .5rem;
+}
+.chart-container h2{
+  margin: .5rem 0;
+}
+
+.analytics::-webkit-scrollbar{
+  display: none;
+}
