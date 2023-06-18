@@ -1,10 +1,8 @@
 import { useContext, useEffect, useState } from 'react';
-import { messages } from '../../../data';
 import '../../../styles/messages.css';
 import messageImg from '../../../utils/images/messagesImg2.svg';
 import Menu from '../menu';
 import NavBar from '../nav';
-import ColorfulHeader from '../../../common/colorfulHeader';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { AppContext } from '../../../App';
@@ -36,7 +34,7 @@ const Messages = () => {
         if(status === 'success'){
             setAdminMessages(newAdminMessages);
         }
-    },[status,setAdminMessages]);
+    },[status,setAdminMessages, newAdminMessages]);
 
     // Getting a single Admin Message
     const getMessage = (message) =>{
@@ -47,25 +45,25 @@ const Messages = () => {
     // Quiz Approval
     const handleQuizApproval = async () =>{
         if(!selectedMessage) return;
-        const approvedQuiz = await axios.post('http://localhost:5000/api/quizzes', selectedMessage);
-        const deletedQuiz = await axios.delete(`http://localhost:5000/api/uploadQuiz/${selectedMessage?._id}`);
+        await axios.post('http://localhost:5000/api/quizzes', selectedMessage);
+        await axios.delete(`http://localhost:5000/api/uploadQuiz/${selectedMessage?._id}`);
         const message = {
             recipientId: user?._id,
             message : `Congratulations ${user?.firstname} ${user?.lastname}! your quiz has been approved.`
         }
-        const adminMessage = await axios.post('http://localhost:5000/api/messages', message);
+        await axios.post('http://localhost:5000/api/messages', message);
         alert("Approved");
         window.location.reload();
     };
 
     // Quiz Rejection
     const handleQuizDecline = async() =>{
-        const deletedQuiz = await axios.delete(`http://localhost:5000/api/uploadQuiz/${selectedMessage?._id}`);
+        await axios.delete(`http://localhost:5000/api/uploadQuiz/${selectedMessage?._id}`);
         const message = {
             recipientId: user?._id,
             message : `Sorry ${user?.firstname} ${user?.lastname}! your quiz was declined please follow the terms for quiz creation.`
         }
-        const adminMessage = await axios.post('http://localhost:5000/api/messages', message);
+        await axios.post('http://localhost:5000/api/messages', message);
         window.location.reload();
     };
 
@@ -97,7 +95,6 @@ const Messages = () => {
                 <NavBar/>
                 {isAdmin ? (
                     <div className="adminMessageConatiner">
-                        {/* <ColorfulHeader placeholder="QUIZ REQUESTS"/> */}
                         {selectedMessage ? (
                             <div className="message-details">
                                 <div className="details-header">
@@ -164,7 +161,7 @@ const Messages = () => {
                         </div>
 
                         <div className="img-area">
-                            <img src={messageImg}/>
+                            <img src={messageImg} alt='img'/>
                         </div>
                     </div>
                 ): <EmptyField/>}

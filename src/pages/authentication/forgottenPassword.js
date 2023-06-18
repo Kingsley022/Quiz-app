@@ -1,8 +1,7 @@
 import {useForm} from "react-hook-form";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import GoogleBtn from '../../common/googlebtn';
 import axios from "axios";
 import { AppContext } from "../../App";
 import { useContext } from "react";
@@ -11,7 +10,7 @@ import logo from '../../utils/images/logo5.png';
 
 const ForgottenPassword = ({animate, setForttenPassword}) => {
 
-    const{setUser, user} = useContext(AppContext);
+    const{setUser} = useContext(AppContext);
     const[serverErr, setServerErr] = useState('');
     const[newEye, setNewEye] = useState(false);
     const[confirmEye, setConfirmEye] = useState(false);
@@ -60,7 +59,7 @@ const ForgottenPassword = ({animate, setForttenPassword}) => {
             <div className="img-area"></div>
 
             <div className="form-area">
-                <img src={logo} className="logo" onClick={() => navigateTo('/')} />
+                <img src={logo} className="logo" onClick={() => navigateTo('/')} alt="logo"/>
                 <p className="greeting"><span>Hello!</span><br/>Please provide your the details bellow</p>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="input-field">

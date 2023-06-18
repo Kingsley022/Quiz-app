@@ -3,7 +3,6 @@ import science from '../utils/images/science.png';
 import history from '../utils/images/history.png';
 import math from '../utils/images/math.png';
 import logo from '../utils/images/logo5.png';
-import logop from '../utils/images/logo3.png';
 import aboutImg from '../utils/images/about.png';
 import ongoing from '../utils/images/ongoing.png';
 import contactImg from '../utils/images/contact.png';
@@ -13,8 +12,8 @@ import { useContext, useEffect, useState } from 'react';
 import CountdownTimer from '../common/timer';
 import { onGoingQuiz, reviews } from '../data';
 import { useNavigate } from 'react-router-dom';
-import { navbars } from '../data';
-import { Link, animateScroll as scroll } from "react-scroll";
+import { navbars as navs } from '../data';
+import { Link} from "react-scroll";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { AppContext } from './../App';
@@ -22,7 +21,7 @@ import MenuIcon from '../common/menuIcon';
 import ContactForm from './contactForm';
 
 const Home = () => {
-    const[navs, setNavs] = useState(navbars);
+    // const[navs, setNavs] = useState(navbars);
     const[winScroll, setWinScroll] = useState(false);
     const[menuToggle, setMenuToggle] = useState(false);
     const navigateTo = useNavigate();
@@ -51,17 +50,6 @@ const Home = () => {
         });
       }, []);
 
-    const handleActiveNav = id =>{
-        const updatedNavs = navs.map(nav => {
-            if(nav.id === id){
-                return {...nav, isToggled : true}
-            }else{
-                return {...nav, isToggled : false}
-            }
-        });
-        setNavs(updatedNavs);
-    }
-
     const handleMenuToggle = () => {
         setMenuToggle(prev => !prev)
     }
@@ -78,7 +66,7 @@ const Home = () => {
         <div className="home-container">
             <div className="landing-page" id="HOME">
                 <div className={`header ${winScroll && 'winScrolled'}`}>
-                <Link to="HOME" spy={true} smooth={true} duration={200} offset={-70}> <img src={logo} className="logo" onClick={() => navigateTo('/')}/> </Link>
+                <Link to="HOME" spy={true} smooth={true} duration={200} offset={-70}> <img alt='img' src={logo} className="logo" onClick={() => navigateTo('/')}/> </Link>
                     <div className={`nav-bars ${menuToggle && 'menu-active'}`}>
                         {navs.map((nav, index)=> (
                             <React.Fragment key={index}>
@@ -134,15 +122,15 @@ const Home = () => {
 
             <div className="categories">
                 <div className="category science">
-                    <img src={science}/>
+                    <img src={science} alt='img'/>
                     <p>SCIENCE</p>
                 </div>
                 <div className="category math">
-                    <img src={math}/>
+                    <img src={math} alt='img'/>
                     <p>MATH</p>
                 </div>
                 <div className="category history">
-                    <img src={history}/>
+                    <img src={history} alt='img'/>
                     <p>HISTORY</p>
                 </div>
             </div>
@@ -156,7 +144,7 @@ const Home = () => {
                 <div className="lquizzes">
                     {onGoingQuiz.map( quiz => (
                         <div className="lquiz-container" key={quiz.id} onClick={() => navigateTo('/dashboard')}>
-                            <img src={quiz.img}/>
+                            <img src={quiz.img} alt='img'/>
                             <p className='lkeyword'>{quiz.keyword}</p>
                             <small className='lcreator'>By {quiz.creator}</small><br/>
                             <CountdownTimer days={quiz.day} hours={quiz.hour} minutes={quiz.minute} seconds={quiz.second}/>
@@ -171,7 +159,7 @@ const Home = () => {
             
             <div className="description" data-aos="fade-up">
                 <div className="img-area">
-                    <img src={ongoing}/>
+                    <img src={ongoing} alt='img'/>
                 </div>
                 
                 <div className="txt-area">
@@ -204,7 +192,7 @@ const Home = () => {
                 </div>
 
                 <div className="img-area">
-                    <img src={aboutImg}/>
+                    <img src={aboutImg} alt='img'/>
                 </div>
             </div>
 
@@ -214,7 +202,7 @@ const Home = () => {
                 <div className="reviews">
                     {reviews.map(review =>(
                         <div className="review" key={review.id}>
-                            <img src={review.img}/>
+                            <img src={review.img} alt='img'/>
                             <div className="review-text">
                                 <blockquote>{review.qoute}</blockquote>
                                 <cite>- {review.name}</cite>
@@ -226,7 +214,7 @@ const Home = () => {
 
             <div className="contact" data-aos="fade-up" id='CONTACT'>
                 <div className="img">
-                    <img src={contactImg}/>
+                    <img src={contactImg} alt='img' />
                 </div>
                 <ContactForm/>
                 
@@ -235,7 +223,7 @@ const Home = () => {
         <div className="footer">
             <div className="top-footer">
                 <div className="socials">
-                    <img src={logo}/>
+                    <img src={logo} alt='img'/>
                     <h3>Follow Us</h3>
                     <div className="social-icons">
                         <i className="fa fa-facebook"></i>

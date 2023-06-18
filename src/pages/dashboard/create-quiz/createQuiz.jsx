@@ -12,10 +12,8 @@ import 'react-datetime/css/react-datetime.css';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { AppContext } from '../../../App';
-import Quiz from '../../quiz/quiz';
 import axios from 'axios';
 import PopUpMessage from '../common/popUpMessage';
-import Swal from 'sweetalert2';
 
 const CreateQuiz = () => {
 
@@ -97,7 +95,7 @@ const CreateQuiz = () => {
 
         try{
             if(!quiz) return;
-            const reponse = await axios.post('http://localhost:5000/api/uploadQuiz', quiz);
+            await axios.post('http://localhost:5000/api/uploadQuiz', quiz);
             setShowPopUP(true);
             setStoredQuiz(null);
         }catch(err){
@@ -136,9 +134,6 @@ const CreateQuiz = () => {
         reset();
     };
 
-    const handleDatetimeChange = (moment) => {
-        this.setState({ selectedDatetime: moment });
-      }
 
       const currentDate = new Date();
       const minDate = currentDate.getTime();
@@ -221,7 +216,7 @@ const CreateQuiz = () => {
 
                     <div className="output-area">
                         { showPopUP ? <PopUpMessage/> : questions.length === 0 ? (
-                            <img src={formImage} />
+                            <img src={formImage} alt='formImg'/>
                             ) : (
                             <div>
                                 <ColorfulHeader placeholder='Questions'/>

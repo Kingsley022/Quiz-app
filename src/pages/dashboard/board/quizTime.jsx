@@ -6,7 +6,6 @@ const QuizTime = ({ startTime, endTime }) => {
     let startTimestamp = Date.parse(startTime);
     let endTimestamp = Date.parse(endTime);
     const startTimeDifference = startTimestamp - Date.now();
-    const endTimeDifference = endTimestamp - Date.now();
     
     let timeDifference;
     if(startTimeDifference <= 0){

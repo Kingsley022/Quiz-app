@@ -33,7 +33,7 @@ const QuizSummary = ({quiz}) => {
     return (
         <div className="summary-container">
           <div className="summary-image">
-            <img src={greenTick} />
+            <img src={greenTick} alt='img' />
           </div>
             <div className="summary-content">
               <h2>Congratulations <span>{user?.firstname}</span>!</h2>

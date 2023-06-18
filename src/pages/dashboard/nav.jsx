@@ -15,7 +15,7 @@ const NavBar = () => {
         return res?.data?.countryCode;
     });
 
-    if(status == 'loading'){
+    if(status === 'loading'){
         console.log("Offline")
     }
 
@@ -30,7 +30,7 @@ const NavBar = () => {
             </div>
 
             <div className="right">
-                <img src={`https://flagsapi.com/${country}/flat/24.png`}></img>
+                <img src={`https://flagsapi.com/${country}/flat/24.png`} alt="img"></img>
                 <i className="fa fa-bell-o" onClick={() => navigateTo('/dashboard/messages')}></i>
                 <i className="fa fa-cog" onClick={() => navigateTo('/dashboard/setting')}></i>
                 <div className="user" onClick={() => navigateTo('/dashboard/account')}>

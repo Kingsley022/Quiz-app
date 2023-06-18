@@ -22,18 +22,18 @@ const Menu = () => {
         });
         setMenu(newMenu);
     }
-    useEffect(handleMenuActive, []);
+    useEffect(handleMenuActive, [location.pathname, menu]);
 
     const handleMenuToggle = () =>{
         setMenuToggled(prev => !prev);
     }
     useEffect(() => {
         setMenuToggled(false);
-    }, [window.location]);
+    }, []);
 
     return (
         <div className="menu-container">
-                <img src={logo} onClick={() => navigateTo('/')}/>
+                <img src={logo} onClick={() => navigateTo('/')} alt='logo'/>
 
                 <div className={`menu-list ${isMenuToggled && 'menu-toggle'}`}>
                     {menu.map(menu =>(

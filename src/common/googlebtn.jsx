@@ -1,4 +1,4 @@
-import { signInWithPopup, signOut } from 'firebase/auth';
+import { signInWithPopup} from 'firebase/auth';
 import '../styles/common.css';
 import googleLogo from '../utils/images/googleLogo.png';
 import { auth, googleProvider } from './../config/firebase';
@@ -24,17 +24,10 @@ const GoogleBtn = () => {
         }
       };
 
-    const handleGoogleSignOut = () =>{
-        try{
-            signOut();
-        }catch(err){
-            console.error(err);
-        }
-    }
 
     return (
         <div className="google-btn" onClick={handleGoogleSignIn}>
-            <img src={googleLogo}/>
+            <img src={googleLogo} alt='googleLogo'/>
             <p>Sign In with Google</p>
         </div>
     );

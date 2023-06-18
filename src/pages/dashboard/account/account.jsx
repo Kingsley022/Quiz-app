@@ -2,7 +2,6 @@ import '../../../styles/account.css';
 import Menu from '../menu';
 import { useContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import { history } from '../../../data';
 import kid from '../../../utils/images/kid2.png';
 import scienceImg from '../../../utils/images/science.png';
 import mathImg from '../../../utils/images/math.png';
@@ -10,7 +9,6 @@ import entertainmentImg from '../../../utils/images/entertainment.png';
 import historyImg from '../../../utils/images/history.png';
 import sportsImg from '../../../utils/images/sports.png';
 import { AppContext } from './../../../App';
-import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import EmptyField from '../../../common/emptyField';
 
@@ -37,19 +35,19 @@ const Account = () => {
     // Generates Quiz Image
     const GetCateImg = ({cate}) => {
         let imgSrc;
-        if(cate == 'Science'){
+        if(cate === 'Science'){
             imgSrc = scienceImg
         }
-        if(cate == 'Sports'){
+        if(cate === 'Sports'){
             imgSrc = sportsImg
         }
-        if(cate == 'Entertainment'){
+        if(cate === 'Entertainment'){
             imgSrc = entertainmentImg
         }
-        if(cate == 'History'){
+        if(cate === 'History'){
             imgSrc = historyImg
         }
-        if(cate == 'Math'){
+        if(cate === 'Math'){
             imgSrc = mathImg
         }
         return <img src={imgSrc} alt='hdh' className='cateImg'/>
@@ -147,7 +145,7 @@ const Account = () => {
                             </div>
 
                             <div className="img-area">
-                                <img src={kid}/>
+                                <img src={kid} alt='hello'/>
                             </div>
                         </div>
 

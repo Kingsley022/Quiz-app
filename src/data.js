@@ -129,8 +129,6 @@ export const awardwinners = [
     {id: 3, name: 'Emmanuel Henry', points: 510, award: 'Bronze', quizzes: 25, medal: bronze}
 ];
 
-const pubblishedQuiz = [];
-
 export const selectedQuiz = [
     {id: 1, question: "Who's the Aptech president1 ?", options: [{id: 1, value: 'Chiagozie'}, {id: 2, value: 'Marthin'}, {id: 3, value: 'Donald'}], answer:'Marthin'},
     {id: 2, question: "Who's the Aptech president2 ?", options: [{id: 1, value: 'Chiagozie'}, {id: 2, value: 'Marthin'}, {id: 3, value: 'Donald'}], answer:'Donald'},

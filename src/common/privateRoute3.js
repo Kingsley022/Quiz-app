@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Outlet, Route, useNavigate } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 
 const PrivateRoute3 = () => {
   const navigateTo = useNavigate();

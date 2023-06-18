@@ -11,7 +11,6 @@ import { yupResolver } from "@hookform/resolvers/yup";
 
 const Setting = () => {
     const[userDetails, setUserDetails] = useState(userData);
-    // const [inputValues, setInputValues] = useState(userDetails.map(userD => userD.detailData));
     const[activeInputValue, setActiveInputValue] = useState('');
 
 
@@ -93,7 +92,7 @@ const Setting = () => {
                         </div>
 
                         <div className="edit">  
-                            <img src={editImg}/>
+                            <img src={editImg} alt="img"/>
                         </div>
                     </div>
                 </div>

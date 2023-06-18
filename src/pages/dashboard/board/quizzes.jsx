@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext} from "react";
 import sports from '../../../utils/images/sports.png';
 import science from'../../../utils/images/science.png';
 import math from '../../../utils/images/math.png';
@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2';
 
 
-const Quizzes = ({quizzes, setQuizzes}) => {
+const Quizzes = ({quizzes}) => {
 
   const{user} = useContext(AppContext);
   const navigateTo = useNavigate();

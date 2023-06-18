@@ -33,7 +33,7 @@ const SignUp = ({animate, handleNavigate}) => {
         const registerUser = async (data) =>{
             try{
                 if(!data) return;
-                const reponse = await axios.post('http://localhost:5000/api/users', data);
+                await axios.post('http://localhost:5000/api/users', data);
                 handleNavigate();
             }catch(err){
                 const error = err.response.data
@@ -63,7 +63,7 @@ const SignUp = ({animate, handleNavigate}) => {
             <div className="img-area"></div>
             
             <div className="form-area">
-                <img src={logo} className="logo" onClick={() => navigateTo('/')}/>
+                <img src={logo} className="logo" onClick={() => navigateTo('/')} img='logo' alt='img'/>
                 <p className="greeting"><span>Create an account </span><br/>To join our community and gain access to premium content</p>
                 
                 <form onSubmit={handleSubmit(onSubmit)}>

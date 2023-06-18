@@ -1,11 +1,9 @@
 import '../../../styles/favorite.css';
 import { useContext, useEffect, useState } from "react";
-import { favorites as favs } from "../../../data";
 import favImg from '../../../utils/images/fav-img.png';
 import Menu from '../menu';
 import NavBar from './../nav';
 import { AppContext } from '../../../App';
-import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import EmptyField from '../../../common/emptyField';
 import ColorfulHeader from '../../../common/colorfulHeader';
@@ -27,7 +25,7 @@ const Favorite = () => {
     useEffect(() => { fetchFavorites() }, [setFavorites, user]);
    
     const handleFavoriteDelete = async(id) => {
-        const response = axios.delete(`http://localhost:5000/api/favorites/${id}`);
+        await axios.delete(`http://localhost:5000/api/favorites/${id}`);
         alert('Favorite Deleted');
         window.location.reload();
     }
@@ -54,7 +52,7 @@ const Favorite = () => {
                             </div>
 
                             <div className="img-area">
-                                <img src={favImg}/>
+                                <img src={favImg} alt="fav"/>
                             </div>
                         </div>
                     </>

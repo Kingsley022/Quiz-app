@@ -1,6 +1,5 @@
-import { Outlet, Route, useNavigate } from 'react-router-dom';
-import { useContext, useEffect } from 'react';
-import { AppContext } from '../App';
+import { Outlet, useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const PrivateRoute1 = () => {
   const user = JSON.parse(localStorage.getItem("user"));

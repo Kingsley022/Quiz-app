@@ -1,5 +1,4 @@
 import '../../styles/quiz.css';
-import { selectedQuiz } from '../../data';
 import { useState, useEffect, useContext} from 'react';
 import logo from '../../utils/images/logo5.png'
 import { useNavigate } from 'react-router-dom';
@@ -79,7 +78,7 @@ const Quiz = () => {
         };
         try{
             if(!quizRecord) return;
-            const rquest = await axios.post('http://localhost:5000/api/records', quizRecord);
+            axios.post('http://localhost:5000/api/records', quizRecord);
             localStorage.setItem("quizSummary", JSON.stringify(quizRecord));
             localStorage.removeItem("quiz");
             localStorage.removeItem('timeRemaining');
@@ -112,7 +111,7 @@ const Quiz = () => {
            ) :(
             <div className="take-quiz-container">
                 <div className="logo-n-time">
-                    <img src={logo} />
+                    <img src={logo} alt='img'/>
                     <QuizTimer quiz={quizQuestions} handleQuizSubmit={handleQuizSubmit}/>
                 </div>
                 <div className="quizz-questions">

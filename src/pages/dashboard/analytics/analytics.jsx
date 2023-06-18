@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
-import map from '../../../utils/images/map.png';
 import Menu from '../menu';
 import '../../../styles/analytics.css';
 import NavBar from './../nav';

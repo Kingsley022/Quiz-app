@@ -16,7 +16,6 @@ import SignOut from './pages/dashboard/signOut/signOut';
 import Quiz from './pages/quiz/quiz';
 import PrivateRoute1 from './common/privateRoute1';
 import PrivateRoute2 from './common/privateRoute2';
-import PrivateRoute3 from './common/privateRoute3';
 
 export const AppContext = createContext();
 

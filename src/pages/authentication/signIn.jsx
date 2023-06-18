@@ -8,7 +8,6 @@ import { AppContext } from "../../App";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from '../../utils/images/logo5.png';
-import Swal from 'sweetalert2';
 
 const SignIn = ({animate, handleNavigate, setForttenPassword}) => {
     const{setUser, user} = useContext(AppContext);
@@ -81,7 +80,7 @@ const SignIn = ({animate, handleNavigate, setForttenPassword}) => {
             <div className="img-area"></div>
 
             <div className="form-area">
-                <img src={logo} className="logo" onClick={() => navigateTo('/')}/>
+                <img src={logo} className="logo" onClick={() => navigateTo('/')} alt='logo'/>
                 <p className="greeting"><span>Great to see you again!</span><br/>Please provide your email and password</p>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="input-field">
