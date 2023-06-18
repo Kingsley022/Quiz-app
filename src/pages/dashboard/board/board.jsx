@@ -41,6 +41,7 @@ const Board = () => {
         const response = await axios.get('http://localhost:5000/api/leadersboard');
         return response?.data;
     });
+    console.log(leaders)
     useEffect(() => {
         if (leaderStatus === 'success') {
             setLeadersBoard(leaders)   

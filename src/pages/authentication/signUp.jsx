@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 const SignUp = ({animate, handleNavigate}) => {
 
         const[backendError, setBackendError] = useState('');
+        const[isPassword, setIsPassword] =  useState(true);
         const navigateTo  = useNavigate();
         //form schema ...yup
         const schema = yup.object({
@@ -64,6 +65,7 @@ const SignUp = ({animate, handleNavigate}) => {
             <div className="form-area">
                 <img src={logo} className="logo" onClick={() => navigateTo('/')}/>
                 <p className="greeting"><span>Create an account </span><br/>To join our community and gain access to premium content</p>
+                
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="name-field">
                         <div className="input-n-error">
@@ -93,8 +95,8 @@ const SignUp = ({animate, handleNavigate}) => {
                     </div>
                     {errors.email && <><small className='error'>{errors.email.message}</small><br/></>}
                     <div className="input-field">
-                        <input placeholder='Password' type='password' {...register('password')}/>
-                        <i className="fa fa-lock"></i>
+                        <input placeholder='Password' type={isPassword ? 'password' : 'text'} {...register('password')}/>
+                        <i className={isPassword ? 'fa fa-eye-slash' : 'fa fa-eye'} onClick={() => setIsPassword(!isPassword)}></i>
                     </div>
                     
                     {errors.password && <><small className='error'>{errors.password.message}</small> <br/></>}

@@ -16,6 +16,7 @@ const Quizzes = ({quizzes, setQuizzes}) => {
   const{user} = useContext(AppContext);
   const navigateTo = useNavigate();
 
+  // category checker
 const categoryChecker = (quiz) => {
   if (quiz.category === "Science") {
     return <img src={science} alt="Science" />;
@@ -55,6 +56,7 @@ const handleGetQuiz = (quiz)=> {
   localStorage.setItem("selectedQuiz", JSON.stringify(selectedQuiz));
   navigateTo('/quiz');
 }
+
 function isQuizActive(startTime, endTime) {
   const now = Date.now();
   const quizStart = Date.parse(startTime);

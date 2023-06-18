@@ -327,6 +327,16 @@
     /* border: 1px solid #dbd9d9; */
     text-align: center;
 }
+.quiz-data .quiz .status.on{
+    color: green;
+    /* font-weight: bold; */
+}
+.quiz-data .quiz .status.end{
+    color: rgb(151, 149, 149);
+}
+.quiz-data .quiz .status.soon{
+    color: orange;
+}
 .quiz-data .quiz img{
     width: 45px;
     border-radius: 5px;

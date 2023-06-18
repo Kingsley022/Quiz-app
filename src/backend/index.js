@@ -32,7 +32,7 @@ mongoose.connect('mongodb://localhost/quizzy')
 
 
 //routes
-app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
+app.use(cors({ origin: '*', credentials: true }));
 app.use(express.json());
 app.use('/api/users', users);
 app.use('/api/login', login);

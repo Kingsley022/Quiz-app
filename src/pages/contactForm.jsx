@@ -3,6 +3,8 @@ import { useForm } from 'react-hook-form';
 import Button from '../common/button';
 import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
+import Swal from 'sweetalert2';
+
 
 const schema = Yup.object().shape({
   name: Yup.string().required('Name is required'),
@@ -15,6 +17,10 @@ const ContactForm = () => {
 
   const onSubmit = data => {
     console.log(data);
+    Swal.fire({
+      icon: 'success',
+      title: 'Email sent',
+    });
   };
 
   return (
@@ -27,7 +33,7 @@ const ContactForm = () => {
       </div>
       <div className="form-group">
         <label htmlFor="email" className='fa fa-envelope'></label>
-        <input type="email" id="email" name="email" placeholder='Email' {...register('message')}/>
+        <input type="email" id="email" name="email" placeholder='Email' {...register('email')}/>
         {errors.email && <small className='error'>{errors.email.message}</small>}
       </div>
       <div className="form-group message">

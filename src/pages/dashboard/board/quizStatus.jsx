@@ -4,11 +4,11 @@ const QuizStatus = ({ startTime, endTime }) => {
     const end = new Date(endTime);
   
     if (now < start) {
-      return <p className="status">Soon</p>;
+      return <p className="status soon">Soon</p>;
     } else if (now > end) {
-      return <p className="status">Ended</p>;
+      return <p className="status end">Ended</p>;
     } else {
-      return <p className="status">On</p>;
+      return <p className="status on">On</p>;
     }
 }
  

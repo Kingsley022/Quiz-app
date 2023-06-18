@@ -14,8 +14,10 @@ const Messages = () => {
     const{user} = useContext(AppContext);
     const[isAdmin, setIsAdmin] = useState(false); //checks if user is admin
     const[adminMessages, setAdminMessages] = useState([]); //messages for admin
-    const[selectedMessage, setSelectedMessage] = useState(null); //stores admin selected message
+    const[selectedMessage, setSelectedMessage] = useState(); //stores admin selected message
     const[userMessages, setUserMessages] = useState([]); //messages for user
+
+    console.log(adminMessages);
 
     // Checking If is Admin
     useEffect(() => {
@@ -29,6 +31,7 @@ const Messages = () => {
         const response = await axios.get('http://localhost:5000/api/uploadQuiz');
         return response?.data;
     });
+
     useEffect(()=>{
         if(status === 'success'){
             setAdminMessages(newAdminMessages);
@@ -94,9 +97,8 @@ const Messages = () => {
                 <NavBar/>
                 {isAdmin ? (
                     <div className="adminMessageConatiner">
-                    {adminMessages || selectedMessage && <ColorfulHeader placeholder="QUIZ REQUESTS"/>}
-                    {
-                        selectedMessage ? (
+                        {/* <ColorfulHeader placeholder="QUIZ REQUESTS"/> */}
+                        {selectedMessage ? (
                             <div className="message-details">
                                 <div className="details-header">
                                     <div className="texts">
@@ -129,15 +131,15 @@ const Messages = () => {
                                     <p>EndeTime : <span>{selectedMessage?.endTime}</span></p>
                                 </div>
                             </div>
-                        ) : adminMessages.length ? (
+
+                        ) : adminMessages?.length > 0 ? (
                             <div className="adminMessages">
-                                {adminMessages.map((message, index)=> (
+                                {adminMessages?.map((message, index) => (
                                     <div className="adminMessage" key={index} onClick={() => getMessage(message)}>
                                         <div className="keyword-n-user">
                                             <h2>{message?.keyword}</h2>
                                             <p>{message?.creatorName}</p>
                                         </div>
-
                                         <i className="fa fa-envelope"></i>
                                     </div>
                                 ))}

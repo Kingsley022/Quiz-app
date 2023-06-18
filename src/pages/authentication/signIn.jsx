@@ -8,9 +8,11 @@ import { AppContext } from "../../App";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from '../../utils/images/logo5.png';
+import Swal from 'sweetalert2';
 
 const SignIn = ({animate, handleNavigate, setForttenPassword}) => {
     const{setUser, user} = useContext(AppContext);
+    const[isPassword, setIsPassword] =  useState(true);
     const{signInErr, setSignInErr} = useState();
     const navigateTo = useNavigate();
 
@@ -88,8 +90,8 @@ const SignIn = ({animate, handleNavigate, setForttenPassword}) => {
                     </div>
                     {errors.email && <><small className='error'>{errors.email.message}</small><br/></>}
                     <div className="input-field">
-                        <input type='password' placeholder='Password' {...register('password')}/>
-                        <i className="fa fa-lock"></i>
+                        <input type={isPassword ? 'password' : 'text'} placeholder='Password' {...register('password')}/>
+                        <i className={isPassword ? 'fa fa-eye-slash' : 'fa fa-eye'} onClick={() => setIsPassword(!isPassword)}></i>
                     </div>
                     
                     {errors.password && <><small className='error'>{errors.password.message}</small> <br/></>}

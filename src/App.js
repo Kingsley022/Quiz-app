@@ -51,6 +51,7 @@ function App() {
               <Route path='/dashboard/messages' element={<PrivateRoute1/>}>
                 <Route index element={<Messages/>}/>
               </Route>
+              {/* <Route path='/dashboard/messages' element={<Messages/>}/> */}
 
               <Route path='/dashboard/favorites' element={<PrivateRoute1/>}>
                 <Route index element={<Favorite/>}/>
@@ -76,9 +77,7 @@ function App() {
                 <Route index element={<Authentication/>}/>
               </Route>
               
-              <Route path='/quiz' element={<PrivateRoute3/>}>
-                <Route index element={<Quiz/>}/>
-              </Route>
+              <Route path='/quiz' element={<Quiz/>}/>
 
               <Route path='*' element={<h3>Not Found</h3>}/>
             </Routes>
