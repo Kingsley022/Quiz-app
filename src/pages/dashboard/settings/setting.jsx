@@ -49,7 +49,7 @@ const Setting = () => {
         };
         try{
             if(!updatedData) return;
-            const response  = await axios.put(`http://localhost:5000/api/users/${user._id}`, updatedData);
+            const response  = await axios.put(`https://quizzy-server-xpay.onrender.com/api/users/${user._id}`, updatedData);
             localStorage.setItem("user", JSON.stringify(response.data));
             console.log(response?.data)
         }catch(err){

@@ -26,7 +26,7 @@ const Messages = () => {
 
     // Getting Admin Messages
     const{data:newAdminMessages, status} =  useQuery(['Messages'], async () => {
-        const response = await axios.get('http://localhost:5000/api/uploadQuiz');
+        const response = await axios.get('https://quizzy-server-xpay.onrender.com/api/uploadQuiz');
         return response?.data;
     });
 

@@ -23,7 +23,7 @@ const Board = () => {
 
     // fetching Quizzes
     const{data: quizData, status:quizStatus} = useQuery(['quizzes'], async () => {
-        const response = await axios.get('http://localhost:5000/api/quizzes');
+        const response = await axios.get('https://quizzy-server-xpay.onrender.com/api/quizzes');
         return response?.data;
     });
     useEffect(() => {

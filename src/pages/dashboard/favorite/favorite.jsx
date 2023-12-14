@@ -14,7 +14,7 @@ const Favorite = () => {
 
     const fetchFavorites = async () => {
         try {
-            const response = await axios.get(`http://localhost:5000/api/favorites/me/${user?._id}`);
+            const response = await axios.get(`https://quizzy-server-xpay.onrender.com/api/favorites/me/${user?._id}`);
           if (response) {
             setFavorites(response?.data);
           }

@@ -16,6 +16,7 @@ import SignOut from './pages/dashboard/signOut/signOut';
 import Quiz from './pages/quiz/quiz';
 import PrivateRoute1 from './common/privateRoute1';
 import PrivateRoute2 from './common/privateRoute2';
+import { jwtDecode } from 'jwt-decode';
 
 export const AppContext = createContext();
 
@@ -25,11 +26,12 @@ function App() {
 
   // Mounts the user Details
   useEffect(() => {
-    const storedUser = JSON.parse(localStorage.getItem("user"));
-    if (storedUser) {
-    setUser(storedUser);
+    const userToken = JSON.parse(localStorage.getItem("quizzyToken"));
+    if (userToken) {
+      const userDetails = jwtDecode(userToken);
+      setUser(userDetails?.user);
     }
-  }, []);
+  },[]);
 
   return (
     <AppContext.Provider value={{user, setUser}}>

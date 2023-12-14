@@ -95,7 +95,7 @@ const CreateQuiz = () => {
 
         try{
             if(!quiz) return;
-            await axios.post('http://localhost:5000/api/uploadQuiz', quiz);
+            await axios.post('https://quizzy-server-xpay.onrender.com/api/uploadQuiz', quiz);
             setShowPopUP(true);
             setStoredQuiz(null);
         }catch(err){

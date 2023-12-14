@@ -24,7 +24,7 @@ const Account = () => {
     const handleQuizDelete = async(id, creatorId )=> {
         try{
             if(user?._id !== creatorId) return;
-            const response = await axios.delete(`http://localhost:5000/api/quizzes/${id}`);
+            const response = await axios.delete(`https://quizzy-server-xpay.onrender.com/api/quizzes/${id}`);
             console.log(response?.data);
             window.location.reload();
         }catch(err){

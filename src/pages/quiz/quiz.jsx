@@ -22,7 +22,7 @@ const Quiz = () => {
     // Gets Quiz Questions
     const handleQuizCommence = async () => {
         try{
-            const response = await axios.get(`http://localhost:5000/api/quizzes/${userSelectedQuiz?.id}`);
+            const response = await axios.get(`https://quizzy-server-xpay.onrender.com/api/quizzes/${userSelectedQuiz?.id}`);
             const data = response?.data;
 
             if(data) {

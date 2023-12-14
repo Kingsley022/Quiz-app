@@ -44,17 +44,6 @@ const SignIn = ({animate, handleNavigate, setForttenPassword}) => {
         return user !== null;
     };
 
-
-    // const handleLogin = async () => {
-    //     try {
-    //         const response = await axios.get('http://localhost:5000/api/users/me');
-    //         localStorage.setItem("user", JSON.stringify(response?.data));
-    //         console.log(response?.data)
-    //     }catch(err) {
-    //         alert(err.response?.data);
-    //     }
-    // };
-
    
     //Handles login
     const onSubmit = async (data) => {
@@ -62,8 +51,7 @@ const SignIn = ({animate, handleNavigate, setForttenPassword}) => {
             if(!data) return;
             if(isLoggedIn()) return;
             const response = await axios.post('http://localhost:5000/api/login', data);
-            localStorage.setItem("user", JSON.stringify(response?.data?.user));
-            setUser(response?.data);
+            localStorage.setItem("quizzyToken", JSON.stringify(response?.data));
             navigateTo('/');
         }catch(err){
             const error = err?.response?.data;

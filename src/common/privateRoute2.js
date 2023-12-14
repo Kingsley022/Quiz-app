@@ -1,15 +1,16 @@
 import { Outlet,useNavigate} from 'react-router-dom';
-import { useEffect } from 'react';
+import { useContext, useEffect } from 'react';
+import { AppContext } from '../App';
 
 const PrivateRoute2 = () => {
-  const user = JSON.parse(localStorage.getItem("user"));
+  const userToken = JSON.parse(localStorage.getItem("quizzyToken"));
   const navigateTo = useNavigate();
 
   useEffect(() => {
-    if (user) {
+    if (userToken) {
       navigateTo('/');
     };
-  }, [user, navigateTo])
+  }, [userToken, navigateTo])
   
   return <Outlet/>
 };
