@@ -17,8 +17,6 @@ const Quiz = () => {
     const[quizScore, setQuizScore] = useState(0); // Quiz score
     const[quizSummary, setQuizSummary] = useState(); // Quiz summary
 
-    
-
     // Gets Quiz Questions
     const handleQuizCommence = async () => {
         try{
