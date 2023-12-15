@@ -70,7 +70,7 @@ const Account = () => {
     // Gets Quizzes Created by user
     const fetchMyQuizzes = async () => {
         try {
-          const response = await axios.get(`http://localhost:5000/api/quizzes/creator/${user?._id}`);
+          const response = await axios.get(`https://quizzy-server-xpay.onrender.com/api/quizzes/creator/${user?._id}`);
           if (response) {
             setMyQuizzes(response?.data);
           }
@@ -83,7 +83,7 @@ const Account = () => {
     // Gets users' Quiz Record
     const fetchMyRecords = async () => {
         try {
-          const response = await axios.get(`http://localhost:5000/api/records/user/${user?._id}`);
+          const response = await axios.get(`https://quizzy-server-xpay.onrender.com/api/records/user/${user?._id}`);
           if (response) {
             setMyHistory(response?.data);
           }
