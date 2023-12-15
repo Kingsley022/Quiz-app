@@ -34,7 +34,7 @@ const Board = () => {
 
     // Fetching Leaders Board
     const{data: leaders, status:leaderStatus} = useQuery(['leadersBoard'], async () => {
-        const response = await axios.get('http://localhost:5000/api/leadersboard');
+        const response = await axios.get('https://quizzy-server-xpay.onrender.com/api/leadersboard');
         return response?.data;
     });
     console.log(leaders)

@@ -19,7 +19,7 @@ const Messages = () => {
 
     // Checking If is Admin
     useEffect(() => {
-        if(user?._id === '643d68ec8ad5b18e7899e4b3'){
+        if(user?._id === '657b8c32fa770fb27cf2b288'){
             setIsAdmin(true);
         }
     },[user,setIsAdmin]);
@@ -45,25 +45,25 @@ const Messages = () => {
     // Quiz Approval
     const handleQuizApproval = async () =>{
         if(!selectedMessage) return;
-        await axios.post('http://localhost:5000/api/quizzes', selectedMessage);
-        await axios.delete(`http://localhost:5000/api/uploadQuiz/${selectedMessage?._id}`);
+        await axios.post('https://quizzy-server-xpay.onrender.com/api/quizzes', selectedMessage);
+        await axios.delete(`https://quizzy-server-xpay.onrender.com/api/uploadQuiz/${selectedMessage?._id}`);
         const message = {
             recipientId: user?._id,
             message : `Congratulations ${user?.firstname} ${user?.lastname}! your quiz has been approved.`
         }
-        await axios.post('http://localhost:5000/api/messages', message);
+        await axios.post('https://quizzy-server-xpay.onrender.com/api/messages', message);
         alert("Approved");
         window.location.reload();
     };
 
     // Quiz Rejection
     const handleQuizDecline = async() =>{
-        await axios.delete(`http://localhost:5000/api/uploadQuiz/${selectedMessage?._id}`);
+        await axios.delete(`https://quizzy-server-xpay.onrender.com/api/uploadQuiz/${selectedMessage?._id}`);
         const message = {
             recipientId: user?._id,
             message : `Sorry ${user?.firstname} ${user?.lastname}! your quiz was declined please follow the terms for quiz creation.`
         }
-        await axios.post('http://localhost:5000/api/messages', message);
+        await axios.post('https://quizzy-server-xpay.onrender.com/api/messages', message);
         window.location.reload();
     };
 
@@ -72,7 +72,7 @@ const Messages = () => {
         ['userMessages'],
         async () => {
           try {
-            const response = await axios.get(`http://localhost:5000/api/messages/me/${user?._id}`);
+            const response = await axios.get(`https://quizzy-server-xpay.onrender.com/api/messages/me/${user?._id}`);
             return response.data;
           } catch (error) {
             console.log(error.message);

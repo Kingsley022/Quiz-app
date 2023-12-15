@@ -78,10 +78,10 @@ const Quiz = () => {
         };
         try{
             if(!quizRecord) return;
-            axios.post('http://localhost:5000/api/records', quizRecord);
+            await axios.post('https://quizzy-server-xpay.onrender.com/api/records', quizRecord);
             localStorage.setItem("quizSummary", JSON.stringify(quizRecord));
             localStorage.removeItem("quiz");
-            localStorage.removeItem('timeRemaining');
+            localStorage.removeItem("timeRemaining");
             window.location.reload();
         }catch(err){
             console.log(err.message);
@@ -91,6 +91,7 @@ const Quiz = () => {
         const storedSummary = JSON.parse(localStorage.getItem("quizSummary"));
         if (storedSummary) {
             setQuizSummary(storedSummary);
+            localStorage.removeItem("timeRemaining");
         }
     }, [setQuizSummary]);
 

@@ -12,7 +12,7 @@ import logo from '../../utils/images/logo5.png';
 const SignIn = ({animate, handleNavigate, setForttenPassword}) => {
     const{setUser, user} = useContext(AppContext);
     const[isPassword, setIsPassword] =  useState(true);
-    const{signInErr, setSignInErr} = useState();
+    const[signInErr, setSignInErr] = useState("");
     const navigateTo = useNavigate();
 
     //Login form schema
@@ -31,7 +31,7 @@ const SignIn = ({animate, handleNavigate, setForttenPassword}) => {
 
     // Mounts the user Details
     useEffect(() => {
-        const storedUser = JSON.parse(localStorage.getItem("user"));
+        const storedUser = JSON.parse(localStorage.getItem("quizzyToken"));
         if (storedUser) {
         setUser(storedUser);
         }
@@ -40,7 +40,7 @@ const SignIn = ({animate, handleNavigate, setForttenPassword}) => {
 
     //Check if user is loggedIn
     const isLoggedIn = () => {
-        const user = JSON.parse(localStorage.getItem("user"));
+        const user = JSON.parse(localStorage.getItem("quizzyToken"));
         return user !== null;
     };
 
@@ -50,13 +50,15 @@ const SignIn = ({animate, handleNavigate, setForttenPassword}) => {
         try{
             if(!data) return;
             if(isLoggedIn()) return;
-            const response = await axios.post('http://localhost:5000/api/login', data);
+            const response = await axios.post('https://quizzy-server-xpay.onrender.com/api/login', data);
             localStorage.setItem("quizzyToken", JSON.stringify(response?.data));
+            window.location.reload();
             navigateTo('/');
         }catch(err){
             const error = err?.response?.data;
             if(error){
                 setSignInErr(error);
+                console.log(error)
                 alert(error);
             }
         }
@@ -83,7 +85,7 @@ const SignIn = ({animate, handleNavigate, setForttenPassword}) => {
                     
                     {errors.password && <><small className='error'>{errors.password.message}</small> <br/></>}
                     <button type="submit" className="submitBtn">Login</button>
-                    {signInErr && <small className='error'>{signInErr} error </small>}
+                    {signInErr && <small className='error' style={{marginTop: ".5rem"}}>{signInErr}</small>}
                 </form>
                 <div className="btn-container-forgot">
                     <small className='auth-question'>Don't have an account?<span onClick={handleNavigate}>Sign Up</span></small>

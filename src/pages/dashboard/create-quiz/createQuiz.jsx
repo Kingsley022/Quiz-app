@@ -98,6 +98,7 @@ const CreateQuiz = () => {
             await axios.post('https://quizzy-server-xpay.onrender.com/api/uploadQuiz', quiz);
             setShowPopUP(true);
             setStoredQuiz(null);
+            localStorage.removeItem("Quiz");
         }catch(err){
             console.log(err.message);
         }

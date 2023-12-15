@@ -14,7 +14,8 @@ const SignOut = () => {
     setConfirmSignOut(true);
     setTimeout(() => {
         navigateTo('/');
-        localStorage.removeItem("user");
+        localStorage.removeItem("quizzyToken");
+        window.location.reload();
     }, 2000);
   };
 

@@ -22,7 +22,7 @@ const Menu = () => {
         });
         setMenu(newMenu);
     }
-    useEffect(handleMenuActive, [location.pathname, menu]);
+    useEffect(handleMenuActive, [location.pathname]);
 
     const handleMenuToggle = () =>{
         setMenuToggled(prev => !prev);

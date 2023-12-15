@@ -33,7 +33,7 @@ const SignUp = ({animate, handleNavigate}) => {
         const registerUser = async (data) =>{
             try{
                 if(!data) return;
-                await axios.post('http://localhost:5000/api/users', data);
+                await axios.post('https://quizzy-server-xpay.onrender.com/api/users', data);
                 handleNavigate();
             }catch(err){
                 const error = err.response.data

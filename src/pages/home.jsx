@@ -26,8 +26,6 @@ const Home = () => {
     const[menuToggle, setMenuToggle] = useState(false);
     const navigateTo = useNavigate();
     const{user} = useContext(AppContext);
-
-   
     
     //************ Activates NavScroll **********//
     const handleWindowsScroll = () => {
